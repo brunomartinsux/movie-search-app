@@ -1,0 +1,18 @@
+<div class="header">
+    <h2>Buscador de filmes</h2>
+</div>
+<div class="search-bar-container">
+    <input type="text" class="form-control" #searchInput (input)="searchMovie(searchInput.value); errorMsg = false" name="searchInput"
+        id="search" data-testid="movie-search-input" placeholder="Digite o nome do filme">
+</div>
+<div class="movies-container">
+    <div class="movie-card" data-testid="movie-card" *ngIf="foundMovie" id="movie-card" routerLink="resume/{{foundMovie?.Title}}/{{foundMovie?.Plot}}">
+        <img [src]="foundMovie?.Poster" alt="">
+        <p>Título: {{foundMovie?.Title}}</p>
+        <p>Data de Lançamento: {{foundMovie?.Released}}</p>
+        <p>Rating: {{foundMovie?.imdbRating}}</p>
+    </div>
+
+    <div class="not-found-msg" data-testid="error-msg" *ngIf="errorMsg">Desculpe, não encontramos o filme '{{searchInput.value}}' no nosso
+        catálogo...</div>
+</div>

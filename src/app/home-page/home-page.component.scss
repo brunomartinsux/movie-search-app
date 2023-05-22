@@ -1,0 +1,48 @@
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input {
+        width: 500px;
+        padding-inline: 16px;
+    }
+}
+
+.movies-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+
+    .movie-card {
+        border: 1px solid rgba(0, 0, 0, 0.206);
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        border-radius: 16px;
+
+        :hover {
+            cursor: pointer;
+        }
+
+        img {
+            border-radius: 16px 16px 0 0;
+        }
+
+        p {
+            text-align: center;
+        }
+
+    }
+}
